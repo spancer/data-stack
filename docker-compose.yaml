@@ -1,0 +1,12 @@
+services:
+  notebook:
+    build: .
+    container_name: notebook
+    volumes:
+      - ./data/html:/var/lib/mds/html
+      - ./data/stage:/var/lib/mds/stage
+      - ./data/mds/notebooks:/var/lib/mds/notebooks
+      - ./projects/dagster:/var/lib/mds/dagster
+      - ./projects/dbt:/var/lib/mds/dbt
+    ports:
+      - '8888:8888' 
